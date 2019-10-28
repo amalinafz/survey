@@ -15,7 +15,7 @@
 				  	@enderror --}}
 			     	<label for="Q1">1. What is your age group?</label>
 			     	<select class="form-control @error('age') is-danger @enderror" name="age">
-					    <option selected hidden >Choose...</option>
+					    <option hidden >Choose...</option>
 						<option>< 18</option>
 						<option>18 to 35</option>
 						<option>35 to 60</option>
@@ -28,7 +28,7 @@
 				  	@enderror --}}
 			      <label for="Q2">2. What is your education level?</label>
 			      <select class="form-control @error('education') is-danger @enderror" name="education">
-			      	<option selected hidden>Choose...</option>
+			      	<option hidden>Choose...</option>
 				  	<option>Secondary school and below</option>
 				  	<option>Diploma</option>
 				  	<option>Degree</option>
@@ -41,7 +41,7 @@
 				  	@enderror --}}
 			      <label for="Q3">3. What is your monthly income?</label>
 			      <select class="form-control @error('income') is-danger @enderror" name="income">
-			      	<option selected hidden>Choose...</option>
+			      	<option hidden>Choose...</option>
 				  	<option>Less than RM1000</option>
 				  	<option>Between RM1000 to RM3000</option>
 				  	<option>Between RM3000 to RM5000</option>
@@ -54,7 +54,7 @@
 				  	@enderror --}}
 			      <label for="Q4">4. Your gender:</label>
 			      <select class="form-control @error('gender') is-danger @enderror" name="gender">
-			      	<option selected hidden>Choose...</option>
+			      	<option hidden>Choose...</option>
 				  	<option>Male</option>
 				  	<option>Female</option>
 				  </select>

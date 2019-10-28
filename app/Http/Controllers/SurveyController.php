@@ -59,14 +59,14 @@ class SurveyController extends Controller
     public function store(Request $request)
     {
         $param =$request->all();
-
-        // $request->validate([
-        //     'age'=>'required',
-        //     'education'=>'required',
-        //     'income'=>'required',
-        //     'gender'=>'required'
-        // ]);
-
+        // dd($param);
+        $request->validate([
+            'age'=>'bail|required|not_in:0',
+            'education'=>'bail|required|not_in:0',
+            'income'=>'bail|required|not_in:0',
+            'gender'=>'required|not_in:0'
+        ]);
+        dd($param);
         $surv = new Survey;
         $surv->age= $param['age'];
         $surv->education = $param['education'];
