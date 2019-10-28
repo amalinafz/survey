@@ -1,10 +1,10 @@
-##Creating Survey by using Laravel
+## Creating Survey by using Laravel
 
 * Homepage
-![alt text](https://github.com/amalinafz/survey/blob/master/public/images/homepage.png "Homepage")
+![alt text](https://github.com/amalinafz/survey/blob/master/public/image/homepage.png "Homepage")
 
 * Survey
-![alt text](https://github.com/amalinafz/survey/blob/master/public/images/survey.png "Survey")
+![alt text](https://github.com/amalinafz/survey/blob/master/public/image/survey.png "Survey")
 
 * Result
 <!-- ![alt text](https://github.com/amalinafz/survey/blob/master/public/images/1.png "Result") -->
