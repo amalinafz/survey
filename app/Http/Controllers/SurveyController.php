@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Survey;
 use Illuminate\Http\Request;
 Use Alert;
-
+use DB;
 
 class SurveyController extends Controller
 {
@@ -21,8 +21,23 @@ class SurveyController extends Controller
         //     Alert::success('Thank you', session(key: 'success_message'));
         // }
         $outcomes = Survey::all();
+        $dataA1 =Survey::where('age', '< 18')->count();
+        $dataA2 =Survey::where('age', '18 to 35')->count();
+        $dataA3 =Survey::where('age', '35 to 60')->count();
+        $dataA4 =Survey::where('age', 'Above 60')->count();
+        $dataE1 =Survey::where('education', 'Secondary school and below')->count();
+        $dataE2 =Survey::where('education', 'Diploma')->count();
+        $dataE3 =Survey::where('education', 'Degree')->count();
+        $dataE4 =Survey::where('education', 'Post graduated degree')->count();
+        $dataI1 =Survey::where('income', 'Less than RM1000')->count();
+        $dataI2 =Survey::where('income', 'Between RM1000 to RM3000')->count();
+        $dataI3 =Survey::where('income', 'Between RM3000 to RM5000')->count();
+        $dataI4 =Survey::where('income', 'More than RM5000')->count();
+        $dataF =Survey::where('gender', 'Female')->count();
+        $dataM =DB::table('surveys')->where('gender','Male')->count();
 
-        return view ('homepage', compact('outcomes'));
+
+        return view ('homepage', compact('outcomes', 'dataF', 'dataM', 'dataA1', 'dataA2', 'dataA3', 'dataA4', 'dataE1', 'dataE2', 'dataE3', 'dataE4', 'dataI1', 'dataI2', 'dataI3', 'dataI4' ));
     }
 
     /**
@@ -45,12 +60,12 @@ class SurveyController extends Controller
     {
         $param =$request->all();
 
-        $request->validate([
-            'age'=>'required',
-            'education'=>'required',
-            'income'=>'required',
-            'gender'=>'required'
-        ]);
+        // $request->validate([
+        //     'age'=>'required',
+        //     'education'=>'required',
+        //     'income'=>'required',
+        //     'gender'=>'required'
+        // ]);
 
         $surv = new Survey;
         $surv->age= $param['age'];
@@ -59,9 +74,9 @@ class SurveyController extends Controller
         $surv->gender = $param['gender'];
         $surv->save();
         // dd("haha");
-        Alert::success('Thank you', 'The data have been succesfully collected');
+        Alert::success('Thank you', 'Scroll down to see the result');
         // $outcomes = Survey::all();
-        return view ('homepage');
+        return redirect('/');
         // return view ('result', compact('outcomes'));
     }
 
@@ -74,7 +89,7 @@ class SurveyController extends Controller
     public function show(Survey $survey)
     {
         // $outcomes = Survey::all();
-        // return view ('result', compact('outcomes'));
+        // return view ('result', ['survey'=>$survey]);
     }
 
     /**
@@ -114,6 +129,20 @@ class SurveyController extends Controller
     public function tengok(Survey $survey)
     {
         $outcomes = Survey::all();
-        return view ('result', compact('outcomes'));
+        $dataA1 =Survey::where('age', '< 18')->count();
+        $dataA2 =Survey::where('age', '18 to 35')->count();
+        $dataA3 =Survey::where('age', '35 to 60')->count();
+        $dataA4 =Survey::where('age', 'Above 60')->count();
+        $dataE1 =Survey::where('education', 'Secondary school and below')->count();
+        $dataE2 =Survey::where('education', 'Diploma')->count();
+        $dataE3 =Survey::where('education', 'Degree')->count();
+        $dataE4 =Survey::where('education', 'Post graduated degree')->count();
+        $dataI1 =Survey::where('income', 'Less than RM1000')->count();
+        $dataI2 =Survey::where('income', 'Between RM1000 to RM3000')->count();
+        $dataI3 =Survey::where('income', 'Between RM3000 to RM5000')->count();
+        $dataI4 =Survey::where('income', 'More than RM5000')->count();
+        $dataF =Survey::where('gender', 'Female')->count();
+        $dataM =DB::table('surveys')->where('gender','Male')->count();
+        return view ('result', compact('outcomes', 'dataF', 'dataM', 'dataA1', 'dataA2', 'dataA3', 'dataA4', 'dataE1', 'dataE2', 'dataE3', 'dataE4', 'dataI1', 'dataI2', 'dataI3', 'dataI4' ));
     }
 }

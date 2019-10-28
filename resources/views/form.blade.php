@@ -10,12 +10,12 @@
 
 			<div class="form-row">
 				<div class="form-group col-md-12">
-					@error('age')
+					{{-- @error('age')
 				  		<p class="help is-danger">{{$error->first('age')}} </p>
-				  	@enderror
+				  	@enderror --}}
 			     	<label for="Q1">1. What is your age group?</label>
 			     	<select class="form-control @error('age') is-danger @enderror" name="age">
-					    <option selected hidden>Choose...</option>
+					    <option selected hidden >Choose...</option>
 						<option>< 18</option>
 						<option>18 to 35</option>
 						<option>35 to 60</option>
@@ -23,9 +23,9 @@
 				 	</select>
 			    </div>
 			    <div class="form-group col-md-12">
-			    	@error('education')
+			    	{{-- @error('education')
 				  		<p class="help is-danger">{{$error->first('education')}} </p>
-				  	@enderror
+				  	@enderror --}}
 			      <label for="Q2">2. What is your education level?</label>
 			      <select class="form-control @error('education') is-danger @enderror" name="education">
 			      	<option selected hidden>Choose...</option>
@@ -36,9 +36,9 @@
 				  </select>
 			    </div>
 			    <div class="form-group col-md-12">
-			    	@error('income')
+			    	{{-- @error('income')
 				  		<p class="help is-danger">{{$error->first('income')}} </p>
-				  	@enderror
+				  	@enderror --}}
 			      <label for="Q3">3. What is your monthly income?</label>
 			      <select class="form-control @error('income') is-danger @enderror" name="income">
 			      	<option selected hidden>Choose...</option>
@@ -49,9 +49,9 @@
 				  </select>
 			    </div>
 			    <div class="form-group col-md-12">
-			    	@error('gender')
+			    	{{-- @error('gender')
 				  		<p class="help is-danger">{{$error->first('gender')}} </p>
-				  	@enderror
+				  	@enderror --}}
 			      <label for="Q4">4. Your gender:</label>
 			      <select class="form-control @error('gender') is-danger @enderror" name="gender">
 			      	<option selected hidden>Choose...</option>

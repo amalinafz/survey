@@ -15,5 +15,9 @@
 //     return view('welcome');
 // });
 
-Route::resource('/', 'SurveyController');
 Route::get('/result', 'SurveyController@tengok');
+
+Route::resource('/', 'SurveyController')->only([
+    'index', 'create', 'store'
+]);
+
