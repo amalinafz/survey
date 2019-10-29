@@ -7,4 +7,4 @@
 ![alt text](https://github.com/amalinafz/survey/blob/master/public/image/survey.png "Survey")
 
 * Result
-![alt text](https://github.com/amalinafz/survey/blob/master/public/image/result.png "Result")
+![alt text](https://github.com/amalinafz/survey/blob/master/public/image/results.png "Result")
