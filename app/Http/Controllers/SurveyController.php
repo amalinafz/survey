@@ -66,7 +66,7 @@ class SurveyController extends Controller
             'income'=>'bail|required|not_in:0',
             'gender'=>'required|not_in:0'
         ]);
-        dd($param);
+        // dd($param);
         $surv = new Survey;
         $surv->age= $param['age'];
         $surv->education = $param['education'];
