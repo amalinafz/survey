@@ -8,3 +8,5 @@
 
 * Result
 ![alt text](https://github.com/amalinafz/survey/blob/master/public/image/results.png "Result")
+
+###### Created by using Laravel(Back-end) and Bootstrap(Front-end)
